@@ -34,7 +34,8 @@ namespace _13118EgzaminPraktyczny.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var item = NazwaListy.Find(id);
+            var res = NazwaListy.Find(x => x.Id == id);
+            NazwaListy.Remove(res);
             return NoContent();
         }
 
